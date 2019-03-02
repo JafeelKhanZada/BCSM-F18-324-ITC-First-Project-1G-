@@ -1,7 +1,7 @@
 <div class="container-fluid MainSignUp">
     <div class="row">
         <div class="col-md-4 SignUpLeft">
-            <div class="InnerContent">
+            <div class="InnerContent d-flex justify-content-center align-items-center flex-column flex-wrap">
                 <h1>carrino</h1>
                 <ul class="Features">
                     <li><i class="fa fa-search"></i><span>Explore your favourite topics.</span></li>
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-md-8 SignUpRight">
-            <div class="InnerContent">
+            <div class="InnerContent d-flex justify-content-center align-items-center flex-column flex-wrap">
                 <h1>Create a new account.</h1>
                 <form autoComplete="off" class="container">
                     <label for="Email">Email</label>

@@ -21,7 +21,7 @@
     </head>
     <body>
         <?php include("includes/Header.php") ?>
-        <?php include("includes/SignUp.php") ?>
+        <?php include("includes/ProfileSetting.php") ?>
         <hr>
         <?php include("includes/footer.php") ?>
     </body>
