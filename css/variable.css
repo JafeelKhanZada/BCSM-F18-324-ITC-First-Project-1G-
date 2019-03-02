@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,600,400,500,700,900|Roboto:400,500');
+:root{
+    --Main-Color : #F67280;
+    --Sec-Color :#6C6F76;
+    --Head-Font : "Poppins",sans-sarif;
+    --Body-Font : "Roboto",sans-sarif;
+}
