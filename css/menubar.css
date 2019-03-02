@@ -1,5 +1,9 @@
 div.navbar-wrapper{
     border-top: 2px solid var(--Main-Color);
+    background-color: white !important;
+    height: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(108, 111, 118,.2); 
 }
 .navbar-brand{
     position: absolute;
