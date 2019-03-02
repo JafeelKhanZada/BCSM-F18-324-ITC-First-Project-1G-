@@ -20,6 +20,6 @@
         <title>Carrino | A Facts Based Blog</title>
     </head>
     <body>
-        <?php include("includes/Home.php") ?>
+        <?php include("includes/SignUp.php") ?>
     </body>
 </html>
