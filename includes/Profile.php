@@ -9,6 +9,9 @@
         $QueryExe = mysqli_query($Connection, $Query);
         $Response = mysqli_fetch_assoc($QueryExe);
         $GenderIcon = "fa fa-".$Response['UserGender'];
+        if($Response["UserFullName"] == ""){
+            echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/ProfileSetting.php' </script>";
+        }
     }
     else{
     echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/Login.php' </script>";
@@ -36,7 +39,7 @@
                     <span>
                         430<span> Comments</span>
                     </span>
-                    <span class="LogOut"><i class="fa fa-sign-out"></i></span>
+                    <a class="LogOut" href="LogOut.php"><i class="fa fa-sign-out"></i></a>
                 </div>
             </div>
     </div>
@@ -49,6 +52,7 @@
             <li><i class="fa fa-map-marker"></i><?php echo $Response['UserAddress']; ?></li>
             <li><?php echo"<i class='".$GenderIcon."'></i>"; echo $Response['UserGender']; ?></li>
             <li><i class="fa fa-check-circle"></i>Verified</li>
+            <li><i class="fa fa-info"></i><a href="ProfileSetting.php">Update Profile</a></li>
         </ul>
         </div>
         <div class="col-md-8 blog-area d-flex flex-column flex-wrap">
@@ -59,9 +63,3 @@
         </div>
     </div>
 </div>
-<script>
-    var LogOut = querySelector(".fa-sign-out");
-    LogOut.addEventListener("click", function(){
-        return "<?php session_unset(); ?>"
-    })
-</script>

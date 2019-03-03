@@ -44,8 +44,7 @@
                         <span class="gender">Female</span>                        
                     </div>
                     <div>
-                        <button class="Step2Cont" name="submit">Sign Up</button>
-                        <span><a href='Login.php' >Sign In</a></span>
+                        <button class="Step2Cont" name="submit">Next</button>
                     </div>
                 </form>
             </div>

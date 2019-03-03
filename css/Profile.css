@@ -61,17 +61,18 @@ div.Main div.row div.col-md-10 span div.ProfileDp + span{
     font-size: 15px;
     margin-left: 0;
 }             
-.profile-about span i{
+.profile-about a i{
     transition: all .5s;
+    color:var(--Sec-Color)
 }
-.profile-about span  i:hover{
+.profile-about a  i:hover{
     transition: all .5s; 
-    color: var(--Main-Color);
+    color: var(--Main-Color) !important;
 }
-.profile-about span.LogOut{
+.profile-about a.LogOut{
     font-size: 40px;
 }
-.profile-about span.LogOut:hover{
+.profile-about a.LogOut:hover{
     transition: all 1s; 
     color: var(--Main-Color);
 }

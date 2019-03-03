@@ -2,6 +2,9 @@
     session_start();
     include("./assets/db/Connection.php");
     error_reporting(0);
+    if($_SESSION["UserId"]){
+        echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/Profile.php' </script>";
+    }
 ?>
 <div class="container-fluid MainForm">
                 <div class="row">
@@ -54,7 +57,7 @@
                 $UserArray = mysqli_fetch_assoc($QueryExe);
                 $UserId = $UserArray['UserId'];
                 $_SESSION['UserId'] = $UserId;
-                echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/ProfileSetting.php' </script>";                
+                echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/Profile.php' </script>";                
             }
         }
     }
