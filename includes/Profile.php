@@ -1,3 +1,19 @@
+<?php
+    session_start();
+    include("./assets/db/Connection.php");
+    $UsersId= $_SESSION["UserId"];
+?>
+<?php
+    if($_SESSION["UserId"]){
+        $Query = "SELECT * FROM USERINFO WHERE UserId='$UsersId'";
+        $QueryExe = mysqli_query($Connection, $Query);
+        $Response = mysqli_fetch_assoc($QueryExe);
+        $GenderIcon = "fa fa-".$Response['UserGender'];
+    }
+    else{
+    echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/Login.php' </script>";
+    }
+?>
 <div class="container-fluid Main">
     <div class="row">
         <div class="col-12 coverImg"></div>
@@ -8,7 +24,7 @@
                     <div class="ProfileDp">
                         <img src="./img/Cover.jpg" alt="">
                     </div>
-                    <span>Jafeel KhanZada</span>
+                    <span><?php echo $Response['UserFullName'] ; ?></span>
                 </span>
                 <div class="profile-about d-flex align-items-center">
                     <span>
@@ -21,7 +37,6 @@
                         430<span> Comments</span>
                     </span>
                     <span class="LogOut"><i class="fa fa-sign-out"></i></span>
-
                 </div>
             </div>
     </div>
@@ -29,10 +44,10 @@
         <div class="col-md-4 info-area">
         <ul class="profile-info">
             <li><i class="fa fa-info-circle"></i>Personal Info</li>
-            <li><i class="fa fa-envelope"></i>{this.state.Email}</li>
-            <li><i class="fa fa-mobile"></i>{this.state.phoneNum}</li>
-            <li><i class="fa fa-map-marker"></i>{this.state.address}</li>
-            <li><i class="fa fa-female"></i>{this.state.gender}</li>
+            <li><i class="fa fa-envelope"></i><?php echo $Response['UserEmail']; ?></li>
+            <li><i class="fa fa-mobile"></i><?php echo $Response['UserPhoneNo']; ?></li>
+            <li><i class="fa fa-map-marker"></i><?php echo $Response['UserAddress']; ?></li>
+            <li><?php echo"<i class='".$GenderIcon."'></i>"; echo $Response['UserGender']; ?></li>
             <li><i class="fa fa-check-circle"></i>Verified</li>
         </ul>
         </div>
@@ -44,3 +59,9 @@
         </div>
     </div>
 </div>
+<script>
+    var LogOut = querySelector(".fa-sign-out");
+    LogOut.addEventListener("click", function(){
+        return "<?php session_unset(); ?>"
+    })
+</script>
