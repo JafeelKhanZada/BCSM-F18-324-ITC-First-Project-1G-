@@ -75,3 +75,69 @@ div.Main div.row div.col-md-10 span div.ProfileDp + span{
     transition: all 1s; 
     color: var(--Main-Color);
 }
+.profile-info{
+    letter-spacing: 2px;
+}
+.profile-info li{
+    list-style: none;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+.profile-info li:nth-of-type(1){
+    font-size: 20px;
+    font-weight: 550;
+}
+.profile-info li i{
+    color: rgb(141, 140, 140);
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: -10px;
+}
+
+.profile-info li .fa-check-circle{
+    color: green;
+}
+
+.info-area{
+    background:#fff;
+    margin: 20px 0;
+    border-right: 20px solid #eee;
+
+}
+.blog-area{
+    margin: 20px 0;
+    padding: 10px 30px;
+    background:#fff;
+    height:auto;
+}
+.blog-area img[alt="User"]{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.blog-area img.PostImg{
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.blog-area img.PostImg+p{
+    color: var(--Sec-Color);
+    font-family: var(--Body-Font);
+    letter-spacing: .5px;
+    font-size: 14px;    
+    margin: 10px 0;
+    max-width: 110ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+}
+.blog-area img.PostImg+p+button{
+    background-color: var(--Main-Color);
+    border: none;
+    padding: 7px 0;
+    font-family: var(--Head-Font);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;    
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3)
+}

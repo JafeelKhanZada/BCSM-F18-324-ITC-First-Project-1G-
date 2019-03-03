@@ -3,7 +3,7 @@
         <div class="col-12 coverImg"></div>
     </div>
         <div class="row ProfileDetail d-flex align-items-center justify-content-center">
-            <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 d-flex flex-row flex-wrap justify-content-between">
+            <div class="col-sm-12 col-xs-12 col-md-10 col-lg-10 col-xl-10 d-flex flex-row flex-wrap justify-content-sm-center justify-content-lg-between ">
                 <span>
                     <div class="ProfileDp">
                         <img src="./img/Cover.jpg" alt="">
@@ -25,7 +25,22 @@
                 </div>
             </div>
     </div>
-    <div class="row">
-        <div class="he" style="width:100%; height:100px ; background-color:black; margin:50px 0"></div>
+    <div class="row d-flex align-items-start justify-content-between">
+        <div class="col-md-4 info-area">
+        <ul class="profile-info">
+            <li><i class="fa fa-info-circle"></i>Personal Info</li>
+            <li><i class="fa fa-envelope"></i>{this.state.Email}</li>
+            <li><i class="fa fa-mobile"></i>{this.state.phoneNum}</li>
+            <li><i class="fa fa-map-marker"></i>{this.state.address}</li>
+            <li><i class="fa fa-female"></i>{this.state.gender}</li>
+            <li><i class="fa fa-check-circle"></i>Verified</li>
+        </ul>
+        </div>
+        <div class="col-md-8 blog-area d-flex flex-column flex-wrap">
+            <div><img src="./img/Cover.jpg" width="50px" height="50px" alt="User" /><span>Jafeel KhanZada</span></div>
+            <img src="./img/Cover.JPG" class="img-fluid PostImg" alt="" />
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>        
+            <button>Read More.</button>
+        </div>
     </div>
 </div>
