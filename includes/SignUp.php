@@ -1,5 +1,7 @@
 <?php 
+    session_start();
     include("./assets/db/connection.php");
+    error_reporting(0);
 ?>
 <div class="container-fluid MainSignUp">
     <div class="row">
@@ -16,7 +18,7 @@
         <div class="col-md-8 SignUpRight">
             <div class="InnerContent d-flex justify-content-center align-items-center flex-column flex-wrap">
                 <h1>Create a new account.</h1>
-                <form autoComplete="off" class="container" method="POST" action="./ProfileSetting.php">
+                <form autoComplete="off" class="container" method="POST" action="">
                     <label for="Email">Email</label>
                     <br />
                     <input id="Email" name="userEmail" required autoComplete="off" type="email" placeholder="Enter Your Email...." />
@@ -36,27 +38,40 @@
     </div>
 </div>
 <?php
-if(isset($_POST['submit'])){
-    $UserEmail = $_POST['userEmail'];
-    $UserPass = $_POST['userPass'];
-    $CPass = $_POST['cpass'];
-    if($UserEmail != "" && $UserPass !=""){
-        if($UserPass == $CPass){
-            $query = "INSERT INTO USERINFO (UserEmail,UserPassword) VALUES ('$UserEmail','$UserPass')";
-            $Response = mysqli_query($Connection, $query);
-            if($Response){
-                echo"<script>alert('Data Submited')</script>";
+if(!($_SESSION['UserId'])){
+    if(isset($_POST['submit'])){
+        $UserEmail = $_POST['userEmail'];
+        $UserPass = $_POST['userPass'];
+        $CPass = $_POST['cpass'];
+        if($UserEmail != "" && $UserPass !=""){
+            $ValidateQuery = "SELECT UserId FROM USERINFO WHERE UserEmail='$UserEmail'";
+            $QueryResponse = mysqli_query($Connection , $ValidateQuery);
+            $Result = mysqli_fetch_assoc($QueryResponse);        
+            if($Result){
+                echo "<script>alert('Users Email Already Exits')</script>";    
             }
             else{
-                echo"<script>alert('Not Data Submited')</script>";
+                if($UserPass == $CPass){
+                    $query = "INSERT INTO USERINFO (UserEmail,UserPassword) VALUES ('$UserEmail','$UserPass')";
+                    $Response = mysqli_query($Connection, $query);
+                    if($Response){
+                        echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/Login.php'</script>";
+                    }
+                    else{
+                        echo"<script>alert('Not Data Submited')</script>";
+                    }
+                }
+                else{
+                    echo"<script>alert('Password Does Not Matched')</script>";
+                }
             }
         }
         else{
-            echo"<script>alert('Password Does Not Matched')</script>";
+            echo"<script>alert('Filled The Filed Please!')</script>";
         }
     }
-    else{
-        echo"<script>alert('Filled The Filed Please!')</script>";
-    }
+}
+else{
+    echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/Profile.php' </script>";
 }
 ?>
