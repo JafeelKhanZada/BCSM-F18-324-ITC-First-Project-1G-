@@ -1,0 +1,56 @@
+div.MainSignUp div.row div.SignUpLeft2{
+    background-color: var(--Main-Color);
+    height: auto;
+}
+div.MainSignUp div.row div.SignUpLeft2 div.InnerContent h1{
+    color: white;
+}
+div.MainSignUp div.row div.SignUpLeft2 div.InnerContent ul li{
+    color : white;
+}
+div.MainSignUp div.row div.SignUpRight2{
+    background-color: white;
+}
+div.MainSignUp div.row div.SignUpRight2 h1{
+    margin: 20px 0;
+    color: var(--Main-Color);
+    font-family: var(--Head-Font);
+    font-weight: 700 !important;
+}
+div.MainSignUp div.row div.SignUpRight2 div.InnerContent2 form input[type="text"]{
+    border: 2px solid var(--Main-Color);
+    padding: 5px 0;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+div.MainSignUp div.row div.SignUpRight2 div.InnerContent2 form input::placeholder{
+    font-family: var(--Body-Font);
+    color: var(--Sec-Color);
+    font-size: 14px;
+    letter-spacing: .7px;
+    padding-left: 10px;
+}
+textarea{
+    border-radius: 10px !important;
+}
+div.MainSignUp div.row div.SignUpRight2 div.InnerContent2 form input[type="file"]{
+    margin-top: 20px;
+}
+div.MainSignUp div.row div.SignUpRight2 div.InnerContent2 form button[name="submit"]{
+    background-color: transparent;
+    outline: none;
+    letter-spacing: 0.6px;
+    margin:10px 0;
+    padding: 5px 20px;
+    border: 2px solid var(--Main-Color);
+    color: var(--Main-Color);
+    font-family: var(--Head-Font);
+    font-weight: 500;
+    transition: all .7s;
+    border-radius: 5px;
+}
+div.MainSignUp div.row div.SignUpRight2 div.InnerContent2 form button:hover{
+    background-color: var(--Main-Color);
+    color: white;
+    transition: all .7s;
+}

@@ -15,6 +15,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
          <!-- Styles-CSS -->
         <link rel="stylesheet" href="css/style.css">
+        <!-- Tiny-mce-CDN -->
+        <script src="//cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
         <!-- Script-Personal -->
         <script src="./js/script.js"></script>
         <!-- Font-Awesome-CDN -->
@@ -23,7 +25,7 @@
     </head>
     <body>
         <?php include("includes/Header.php") ?>
-        <?php include("includes/ProfileSetting.php") ?>
+        <?php include("includes/CreatePost.php") ?>
         <hr>
         <?php include("includes/footer.php") ?>
     </body>

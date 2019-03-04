@@ -9,6 +9,7 @@
         $QueryExe = mysqli_query($Connection, $Query);
         $Response = mysqli_fetch_assoc($QueryExe);
         $GenderIcon = "fa fa-".$Response['UserGender'];
+        $UserDp = $Response["UserDp"];
         if($Response["UserFullName"] == ""){
             echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/ProfileSetting.php' </script>";
         }
@@ -25,7 +26,7 @@
             <div class="col-sm-12 col-xs-12 col-md-10 col-lg-10 col-xl-10 d-flex flex-row flex-wrap justify-content-sm-center justify-content-lg-between ">
                 <span>
                     <div class="ProfileDp">
-                        <img src="./img/Cover.jpg" alt="">
+                        <?php echo"<img src='$UserDp' alt='Erro' />"; ?>
                     </div>
                     <span><?php echo $Response['UserFullName'] ; ?></span>
                 </span>
@@ -56,7 +57,7 @@
         </ul>
         </div>
         <div class="col-md-8 blog-area d-flex flex-column flex-wrap">
-            <div><img src="./img/Cover.jpg" width="50px" height="50px" alt="User" /><span>Jafeel KhanZada</span></div>
+            <div><img <?php echo"src='$UserDp'"; ?> width="50px" height="50px" alt="User" /><span><?php echo $Response['UserFullName']; ?></span></div>
             <img src="./img/Cover.JPG" class="img-fluid PostImg" alt="" />
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>        
             <button>Read More.</button>

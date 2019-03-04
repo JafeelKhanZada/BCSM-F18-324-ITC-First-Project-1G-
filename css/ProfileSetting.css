@@ -31,6 +31,13 @@ div.MainSignUp div.row div.SignUpRight2 div.InnerContent form label{
     margin-bottom: 0;
     user-select: none;
 }
+div.MainSignUp div.row div.SignUpRight2 div.InnerContent form label span{
+    position: relative;
+    top: 82px;
+    left: 22px;
+    color: white !important;
+    opacity: 1;
+}
 div.MainSignUp div.row div.SignUpRight2 div.InnerContent form input:not([type="file"]),input:not([type="radio"]){
     width: 100%;
     outline: none;
@@ -126,7 +133,6 @@ div.MainSignUp div.row div.SignUpRight2 div.InnerContent form input[type="file"]
     display: none;
 }
 div.MainSignUp div.row div.SignUpRight2 div.InnerContent form label#ImageUploader{
-    margin-bottom: -30px !important;
     width: 200px;
     height: 200px;
     margin: auto;
@@ -156,4 +162,13 @@ div.MainSignUp div.row div.SignUpRight2 div.InnerContent form label#ImageUploade
     color: white;
     transition: all 1s;
     opacity: 1;
+}
+.progress{
+    background-color: transparent !important;
+    height: 1.3rem;
+    border-radius: 8px;
+}
+.progress-bar{
+    height: 100%;
+    margin-top: 0 !important;
 }
