@@ -6,6 +6,7 @@ img.carousal{
     border-radius: 10px;
 }
 div.carousal{
+    position: relative;
     margin-top: 130px;
     overflow: hidden;
     margin-bottom: 30px;
@@ -67,6 +68,7 @@ div.LatestPost div.row div.Posts div.content a{
     font-weight: 600;
     opacity: .9;
     letter-spacing: 1px;
+    font-size: 20px;
     transition: all .5s;
     word-spacing: 2px;
 }
@@ -191,4 +193,35 @@ div.footer{
 div.footer div.row span span{
     font-weight: 700;
     color: var(--Main-Color)
+}
+a.titlez{
+    position: absolute;
+    left:10%;
+    z-index: 5;
+    top: 50%;
+    width: 40ch;
+    white-space: wrap;
+    overflow: hidden;
+    font-family: var(--Head-Font);
+    /* color: var(--Main-Color); */
+    color: white;
+    padding: 2px;
+    font-size: 45px;
+    text-transform: capitalize;
+    font-weight: 700;
+    word-spacing: 2px;
+    letter-spacing: 2px;
+}
+p.InnerDetails{
+    position: absolute;
+    font-family: var(--Head-Font);
+    color: #999;
+    font-size: 18px;
+    top: 80%;
+    left: 10.3%;
+    font-weight: 500;
+    /* text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7); */
+}
+p.InnerDetails span{
+    font-weight: 700;
 }

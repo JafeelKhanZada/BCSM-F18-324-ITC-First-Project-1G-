@@ -10,6 +10,18 @@
         $Response = mysqli_fetch_assoc($QueryExe);
         $GenderIcon = "fa fa-".$Response['UserGender'];
         $UserDp = $Response["UserDp"];
+        $PostQuery = "SELECT * FROM POSTBLOG WHERE UserId='$UsersId'";
+        $PostQueExe = mysqli_query($Connection, $PostQuery);
+        $TotalResponseTitle = array();
+        $TotalResponseImg = array();
+        $TotalResponseDec = array();
+        $TotalResponseDate = array();
+        while($row = mysqli_fetch_assoc($PostQueExe)){
+            array_push($TotalResponseTitle,$row["PostTitle"]);
+            array_push($TotalResponseImg,$row["PostImage"]);
+            array_push($TotalResponseDate,$row["PostDate"]);
+            array_push($TotalResponseDec,$row["PostBody"]);
+        }
         if($Response["UserFullName"] == ""){
             echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/ProfileSetting.php' </script>";
         }
@@ -32,7 +44,7 @@
                 </span>
                 <div class="profile-about d-flex align-items-center">
                     <span>
-                        92<span> Post</span>
+                        <?php echo mysqli_num_rows($PostQueExe) ?><span> Post</span>
                     </span>
                     <span>
                         302<span> Likes</span>
@@ -56,11 +68,18 @@
             <li><i class="fa fa-info"></i><a href="ProfileSetting.php">Update Profile</a></li>
         </ul>
         </div>
-        <div class="col-md-8 blog-area d-flex flex-column flex-wrap">
-            <div><img <?php echo"src='$UserDp'"; ?> width="50px" height="50px" alt="User" /><span><?php echo $Response['UserFullName']; ?></span></div>
-            <img src="./img/Cover.JPG" class="img-fluid PostImg" alt="" />
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>        
-            <button>Read More.</button>
+        <div class="col-md-8">
+        <?php
+            for($x=0; $x<count($TotalResponseTitle); $x++){
+                echo'<div class="col-12 blog-area d-flex flex-column flex-wrap">
+                    <div><img src="'.$Response["UserDp"].'" width="50px" height="50px" style="border-radius: 50%"><span class="UserNameOnTime"> '.$Response["UserFullName"].'</span></div>
+                    <span class="PostDates">'.$TotalResponseDate[$x].'</span>
+                    <img src="'.$TotalResponseImg[$x].'" class="img-fluid PostImg" alt="" />
+                    '.substr("$TotalResponseDec[$x]",0, 500).'........................................................'.'<br><br>
+                    <button class="ReadMoreNow">Read More.</button>
+                    </div>';
+                }
+                ?>
         </div>
-    </div>
+</div>
 </div>

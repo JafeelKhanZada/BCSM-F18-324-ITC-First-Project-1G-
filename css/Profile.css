@@ -119,6 +119,7 @@ div.Main div.row div.col-md-10 span div.ProfileDp + span{
 }
 .blog-area img.PostImg{
     width: 100%;
+    max-height: 300px;
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -133,13 +134,30 @@ div.Main div.row div.col-md-10 span div.ProfileDp + span{
     text-overflow: ellipsis;
     overflow-wrap: break-word;
 }
-.blog-area img.PostImg+p+button{
+button.ReadMoreNow{
     background-color: var(--Main-Color);
     border: none;
+    width: 100%;
     padding: 7px 0;
     font-family: var(--Head-Font);
     color: white;
     border-radius: 5px;
     cursor: pointer;    
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3)
+}
+span.PostDates{
+    color: var(--Sec-Color) !important;
+    font-family: var(--Head-Font);
+    letter-spacing: 1px;
+    margin-left: 65px;
+    font-size: 14px;
+    margin-top: -15px;
+}
+span.UserNameOnTime{
+    color: var(--Sec-Color) !important;
+    font-family: var(--Head-Font);
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
 }

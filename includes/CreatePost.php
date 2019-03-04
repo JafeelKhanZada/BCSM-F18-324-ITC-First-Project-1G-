@@ -15,7 +15,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-8 SignUpRight2 d-flex justify-content-center">
+        <div class="col-md-8 SignUpRight3 d-flex justify-content-center">
             <div class="InnerContent2 d-flex justify-content-center align-items-center flex-column flex-wrap">
                 <h1>Create a post!</h1>
                 <form action="" method="POST" enctype="multipart/form-data">
@@ -33,12 +33,15 @@ if($_SESSION["UserId"]){
     if(isset($_POST['submit'])){
             $PostTitle = $_POST["title"];
             $PostBody = $_POST["texteditor"];  
+            $FileName = $_FILES['Files']['name'];
             $Dates = date("d.M.Y/D");
-            echo "<script>alert('$PostBody')</script>";
-            $Query = "INSERT INTO POSTBLOG (PostTitle,PostBody,PostDate,UserId) VALUES ('$PostTitle','$PostBody','$Dates', '$UsersID')"; 
+            echo "<script>alert('$Dates')</script>";
+            $TmpName = $_FILES['Files']['tmp_name'];
+            $Folder = './assets/Images/PostImg/'.$FileName;
+            $Query = "INSERT INTO POSTBLOG (PostTitle,PostBody,PostDate,UserId,PostImage) VALUES ('$PostTitle','$PostBody','$Dates', '$UsersID','$Folder')"; 
             $QueryExe = mysqli_query($Connection, $Query);
-            echo mysqli_error($Connection);
             if($QueryExe){
+                move_uploaded_file($TmpName, $Folder);
                 echo "<script>alert('Data Are Submited')</script>";
             }
             else{
@@ -50,17 +53,3 @@ else{
     echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/Login.php' </script>";
 }
 ?>
-<script>
-$(document).on('change', '#ProfileDP', function(){
-        $.ajax({
-            type : "POST",
-            url : 'PostImageUpload.php',
-            data : new FormData($('#SubmitForm')[0]),
-            contentType : false,
-            processData : false,
-            success : function(feedback){   
-            },
-        });
-    });
-});
-</script>
