@@ -5,7 +5,7 @@
     if($_SESSION["UserId"]){
         echo "<script>window.location = 'http://localhost/BCSM-F18-324-ITC-First-Project-1G-/Profile.php' </script>";
     }
-?>
+    ?>
 <div class="container-fluid MainForm">
                 <div class="row">
                     <div class="col-md-6 Left-Content d-flex align-items-center justify-content-center flex-column flex-wrap">
@@ -26,11 +26,11 @@
                         <ul class="Input">
                             <li>
                                 <i class="fa fa-user"></i>
-                                <input type="email" required name="email" placeholder="      Enter Email Here..." />
+                                <input type="email" style="padding-left:20px;" required name="email" placeholder="      Enter Email Here..." />
                             </li>
                             <li>
                                 <i class="fa fa-key"></i>
-                                <input type="password" required minLength="6" name="password" placeholder="      Enter Password Here..." />
+                                <input type="password" style="padding-left:20px;" required minLength="6" name="password" placeholder="      Enter Password Here..." />
                             </li>
                             <li>
                                 <span>Create Account or <span> Forget Password?</span></span>
@@ -62,7 +62,6 @@
         }
     }
 ?>
+<script>
 
-
-
-
+</script>
